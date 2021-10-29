@@ -1,0 +1,103 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Quiz Time</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="hide_onload();">
+    
+      
+     <div id="page1">
+    <div class="instruction">
+        <center>
+                 <h1>Quiz Time</h1>
+        
+        
+         <h2>Please Read Instructions Carefully before beginning the QUIZ</h2>
+        1. Number of Questions: 10<br>
+        2. Time Limit - none <br>
+        3. Must be finished in one sitting.<br>
+        4. multiple attempts allowed on completion till you are satisfied with your performance.<br>
+        <br>
+           GOOD LUCK !!!!!!!!!!!!!!! <br>
+        <br>
+        Click on PROCEED to go to QUIZ <br>
+        
+        
+        
+        <h2>Once Ready click Proceed to begin the test</h2>
+        <input type="button" value="Proceed" id="btnproceed" onclick="show_questions();"></input>
+            
+      </center>
+    </div> 
+</div>      
+        <div id="quiz">
+                      <div id="quiz-header">
+              <p>Question <label id="lblqno"></label> of 10 </p>
+              <p> <label id="lblcomment"></label> </p>
+              <p>Correct Answers-<label id="lblcorrect"></label></p>
+              
+            </div>
+            <div id="questionoption">
+            Q<label id="lblqno1"></label>.
+            <label id="lblq1">Question</label>
+          </div>
+              <div id="ansoption">
+              <input type="radio" id="chk1" name="group1" onclick="chk_click1();"/>A.<label id="lbl1"></label>
+                </div>
+                <div id="ansoption">
+                  <input type="radio" id="chk2" name="group1" onclick="chk_click2();"/>B.<label id="lbl2"></label>
+                    </div>
+                    <div id="ansoption">
+                      <input type="radio" name="group1" id="chk3" onclick="chk_click3();"/>C.<label id="lbl3"></label>
+                        </div>
+                        <div id="ansoption" >
+                          <input type="radio" name="group1" onclick="chk_click4();" id="chk4"/>D.<label id="lbl4"></label>
+                            </div>
+                            <div>
+                                <button class="footerbtn" id="btnfooter"  onclick="show_questions();">
+                                    START 
+                                  </button>
+                                  <button class="footerbtnnext" id="btnfooter" onclick="answers();">
+                                    NEXT </button>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                        <div id="page3">
+                            <div class="final">
+            
+                <!-- <image src="award symbol.jpg" width="100px" height="50px"/> -->
+                <br><br>   
+                <center>
+                   
+            </h1>Thank you for Completing the Course<h1>      
+               <h2> You have achieved <label id="lblpercent"></label></h2>
+            
+                </center>
+            </div>
+        </div>
+           
+            
+       
+
+
+    
+  <script src="main.js"></script>
+  <script>
+      function hide_onload()
+      {
+        document.getElementById("page1").style.display='inline';
+        document.getElementById("quiz").style.display='none';
+         document.getElementById("page3").style.display = 'none';
+                   
+  };
+  
+      
+  </script>
+</body>
+</html>
