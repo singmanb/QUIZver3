@@ -117,11 +117,19 @@ document.getElementById("lblqno1").innerHTML=qno;
 };
 function answers()
 {
-  attempt+=1;
+    var userans=questions[qno-1].answers[answer1];
   
-  if(attempt>10)
+  if(userans==undefined)
+    {
+      document.getElementById("lblcomment").innerHTML="Invalid Selection";
+        return false;
+    }
+    attempt+=1;
+   
+  if(qno>=10)
   {
-    var percent=(((correct/qno)*100).toFixed(2));
+      
+    var percent=(Number(correct)/qno)*100;
     // var percent=((correct/qno)*100);
     // percent=percent.toFixed(0);
     percent=percent + "%"
@@ -136,14 +144,10 @@ function answers()
     var userans=questions[qno-1].answers[answer1];
     
 
-    if(userans==undefined)
-    {
-      document.getElementById("lblcomment").innerHTML="Invalid Selection";
-        return false;
-    }
+    
     if(corrans==userans)
     {
-                document.getElementById("lblcorrect").innerHTML=qno;
+                document.getElementById("lblcorrect").innerHTML=correct;
         qno=Number(qno) + 1;
         correct+=1;
     }
